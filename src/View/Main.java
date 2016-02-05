@@ -39,6 +39,7 @@ public class Main extends javax.swing.JFrame {
         jButtonAlumnosTelefonosAñadir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListAlumnosTelefonos = new javax.swing.JList();
+        jButtonAlumnosTelefonosEliminar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jTextFieldAlumnosEmail = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -52,6 +53,8 @@ public class Main extends javax.swing.JFrame {
         jButtonAlumnosInsertar = new javax.swing.JButton();
         jButtonAlumnosModificar = new javax.swing.JButton();
         jToggleButtonAlumnosEliminar = new javax.swing.JToggleButton();
+        jPanelAlumnosBusqueda = new javax.swing.JPanel();
+        jTextFieldAlumnosBusqueda = new javax.swing.JTextField();
         jScrollPaneAlumnos = new javax.swing.JScrollPane();
         jTableAlumnos = new javax.swing.JTable();
         jPanelCurso = new javax.swing.JPanel();
@@ -62,6 +65,8 @@ public class Main extends javax.swing.JFrame {
         jButtonCursosInsertar = new javax.swing.JButton();
         jToggleButtonCursosEliminar = new javax.swing.JToggleButton();
         jButtonCursosModificar = new javax.swing.JButton();
+        jPanelCursosBusqueda = new javax.swing.JPanel();
+        jTextFieldCursosBusqueda = new javax.swing.JTextField();
         jScrollPaneAlumnos1 = new javax.swing.JScrollPane();
         jTableCurso = new javax.swing.JTable();
 
@@ -85,6 +90,8 @@ public class Main extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jListAlumnosTelefonos);
 
+        jButtonAlumnosTelefonosEliminar.setText("ELIMINAR");
+
         javax.swing.GroupLayout jPanelAlumnosTelefonosLayout = new javax.swing.GroupLayout(jPanelAlumnosTelefonos);
         jPanelAlumnosTelefonos.setLayout(jPanelAlumnosTelefonosLayout);
         jPanelAlumnosTelefonosLayout.setHorizontalGroup(
@@ -94,9 +101,11 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanelAlumnosTelefonosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanelAlumnosTelefonosLayout.createSequentialGroup()
-                        .addComponent(jTextFieldAlumnosTelefono)
+                        .addComponent(jTextFieldAlumnosTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonAlumnosTelefonosAñadir)))
+                        .addComponent(jButtonAlumnosTelefonosAñadir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonAlumnosTelefonosEliminar)))
                 .addContainerGap())
         );
         jPanelAlumnosTelefonosLayout.setVerticalGroup(
@@ -105,7 +114,8 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanelAlumnosTelefonosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldAlumnosTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonAlumnosTelefonosAñadir))
+                    .addComponent(jButtonAlumnosTelefonosAñadir)
+                    .addComponent(jButtonAlumnosTelefonosEliminar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
                 .addContainerGap())
@@ -129,6 +139,24 @@ public class Main extends javax.swing.JFrame {
 
         jToggleButtonAlumnosEliminar.setText("ELIMINAR");
 
+        jPanelAlumnosBusqueda.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "BUSQUEDA"));
+
+        javax.swing.GroupLayout jPanelAlumnosBusquedaLayout = new javax.swing.GroupLayout(jPanelAlumnosBusqueda);
+        jPanelAlumnosBusqueda.setLayout(jPanelAlumnosBusquedaLayout);
+        jPanelAlumnosBusquedaLayout.setHorizontalGroup(
+            jPanelAlumnosBusquedaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelAlumnosBusquedaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTextFieldAlumnosBusqueda)
+                .addContainerGap())
+        );
+        jPanelAlumnosBusquedaLayout.setVerticalGroup(
+            jPanelAlumnosBusquedaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelAlumnosBusquedaLayout.createSequentialGroup()
+                .addComponent(jTextFieldAlumnosBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 14, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanelAlumnosCamposLayout = new javax.swing.GroupLayout(jPanelAlumnosCampos);
         jPanelAlumnosCampos.setLayout(jPanelAlumnosCamposLayout);
         jPanelAlumnosCamposLayout.setHorizontalGroup(
@@ -136,20 +164,9 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanelAlumnosCamposLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelAlumnosCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelAlumnosBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonAlumnosInsertar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelAlumnosTelefonos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanelAlumnosCamposLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldAlumnosDni))
-                    .addGroup(jPanelAlumnosCamposLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldAlumnosApellidos))
-                    .addGroup(jPanelAlumnosCamposLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldAlumnosNombre))
                     .addGroup(jPanelAlumnosCamposLayout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -169,19 +186,33 @@ public class Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldAlumnosFechaNacimientoAnio, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))
+                        .addComponent(jTextFieldAlumnosFechaNacimientoAnio))
                     .addGroup(jPanelAlumnosCamposLayout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBoxAlumnosCurso, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jButtonAlumnosModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jToggleButtonAlumnosEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jToggleButtonAlumnosEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanelAlumnosCamposLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldAlumnosApellidos))
+                    .addGroup(jPanelAlumnosCamposLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldAlumnosNombre))
+                    .addGroup(jPanelAlumnosCamposLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldAlumnosDni)))
                 .addContainerGap())
         );
         jPanelAlumnosCamposLayout.setVerticalGroup(
             jPanelAlumnosCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelAlumnosCamposLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAlumnosCamposLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jPanelAlumnosBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelAlumnosCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTextFieldAlumnosDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -221,7 +252,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jButtonAlumnosModificar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToggleButtonAlumnosEliminar)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jSplitPaneAlumnos.setLeftComponent(jPanelAlumnosCampos);
@@ -261,6 +292,24 @@ public class Main extends javax.swing.JFrame {
 
         jButtonCursosModificar.setText("MODIFICAR");
 
+        jPanelCursosBusqueda.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "BUSQUEDA"));
+
+        javax.swing.GroupLayout jPanelCursosBusquedaLayout = new javax.swing.GroupLayout(jPanelCursosBusqueda);
+        jPanelCursosBusqueda.setLayout(jPanelCursosBusquedaLayout);
+        jPanelCursosBusquedaLayout.setHorizontalGroup(
+            jPanelCursosBusquedaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCursosBusquedaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTextFieldCursosBusqueda)
+                .addContainerGap())
+        );
+        jPanelCursosBusquedaLayout.setVerticalGroup(
+            jPanelCursosBusquedaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCursosBusquedaLayout.createSequentialGroup()
+                .addComponent(jTextFieldCursosBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 14, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanelCursoCamposLayout = new javax.swing.GroupLayout(jPanelCursoCampos);
         jPanelCursoCampos.setLayout(jPanelCursoCamposLayout);
         jPanelCursoCamposLayout.setHorizontalGroup(
@@ -274,13 +323,16 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(jTextFieldCursoNombre))
                     .addComponent(jButtonCursosInsertar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonCursosModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
-                    .addComponent(jToggleButtonCursosEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jToggleButtonCursosEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelCursosBusqueda, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanelCursoCamposLayout.setVerticalGroup(
             jPanelCursoCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelCursoCamposLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jPanelCursosBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelCursoCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(jTextFieldCursoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -290,7 +342,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jButtonCursosModificar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToggleButtonCursosEliminar)
-                .addContainerGap(441, Short.MAX_VALUE))
+                .addContainerGap(397, Short.MAX_VALUE))
         );
 
         jSplitPaneCurso.setLeftComponent(jPanelCursoCampos);
@@ -338,6 +390,7 @@ public class Main extends javax.swing.JFrame {
     public javax.swing.JButton jButtonAlumnosInsertar;
     public javax.swing.JButton jButtonAlumnosModificar;
     public javax.swing.JButton jButtonAlumnosTelefonosAñadir;
+    public javax.swing.JButton jButtonAlumnosTelefonosEliminar;
     public javax.swing.JButton jButtonCursosInsertar;
     public javax.swing.JButton jButtonCursosModificar;
     public javax.swing.JComboBox jComboBoxAlumnosCurso;
@@ -353,10 +406,12 @@ public class Main extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel9;
     public javax.swing.JList jListAlumnosTelefonos;
     public javax.swing.JPanel jPanelAlumnos;
+    public javax.swing.JPanel jPanelAlumnosBusqueda;
     public javax.swing.JPanel jPanelAlumnosCampos;
     public javax.swing.JPanel jPanelAlumnosTelefonos;
     public javax.swing.JPanel jPanelCurso;
     public javax.swing.JPanel jPanelCursoCampos;
+    public javax.swing.JPanel jPanelCursosBusqueda;
     public javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JScrollPane jScrollPaneAlumnos;
     public javax.swing.JScrollPane jScrollPaneAlumnos1;
@@ -366,6 +421,7 @@ public class Main extends javax.swing.JFrame {
     public javax.swing.JTable jTableAlumnos;
     public javax.swing.JTable jTableCurso;
     public javax.swing.JTextField jTextFieldAlumnosApellidos;
+    public javax.swing.JTextField jTextFieldAlumnosBusqueda;
     public javax.swing.JTextField jTextFieldAlumnosDni;
     public javax.swing.JTextField jTextFieldAlumnosDomicilio;
     public javax.swing.JTextField jTextFieldAlumnosEmail;
@@ -375,6 +431,7 @@ public class Main extends javax.swing.JFrame {
     public javax.swing.JTextField jTextFieldAlumnosNombre;
     public javax.swing.JTextField jTextFieldAlumnosTelefono;
     public javax.swing.JTextField jTextFieldCursoNombre;
+    public javax.swing.JTextField jTextFieldCursosBusqueda;
     public javax.swing.JToggleButton jToggleButtonAlumnosEliminar;
     public javax.swing.JToggleButton jToggleButtonCursosEliminar;
     // End of variables declaration//GEN-END:variables
