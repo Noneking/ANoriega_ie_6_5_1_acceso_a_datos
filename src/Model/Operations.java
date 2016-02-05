@@ -11,6 +11,7 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import java.util.ArrayList;
 import java.util.Vector;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.bson.types.ObjectId;
@@ -28,7 +29,7 @@ public class Operations extends Connection {
         
     }
     
-    public void insertStudent(String dni, String name, String surname, String address, String birthdate, ArrayList<String> telephones, String email, String cource){
+    public void insertStudent(String dni, String name, String surname, String address, String birthdate, String[] telephones, String email, String cource){
         try{
             collection=getDatabase().getCollection("ALUMNOS");
 
@@ -42,7 +43,7 @@ public class Operations extends Connection {
             student.append("email", email);
             student.append("cource", cource);
 
-            collection.ensureIndex(student, dni, true);
+//            collection.ensureIndex(student, dni, true);
 
             collection.insert(student);
         } catch(Exception ex){
@@ -78,6 +79,25 @@ public class Operations extends Connection {
         } catch(Exception ex){
             System.err.println(ex);
             JOptionPane.showMessageDialog(null, "INSERT ERROR. TRY AGAIN.");
+        }
+    }
+    
+    public void modifyCource(String id, String name){
+        try{
+            collection=getDatabase().getCollection("COURCES");
+
+            BasicDBObject search=new BasicDBObject();
+            search.put("_id", new ObjectId(id));
+            search=(BasicDBObject) collection.findOne(cource);
+            
+            cource=new BasicDBObject();
+            cource.append("name", name);
+            
+            collection.update(search, cource);
+            
+        } catch(Exception ex){
+            System.err.println(ex);
+            JOptionPane.showMessageDialog(null, "MODIFY ERROR. TRY AGAIN.");
         }
     }
     
@@ -127,9 +147,9 @@ public class Operations extends Connection {
                     row.add(object.get("name"));
                     row.add(object.get("surname"));
                     row.add(object.get("address"));
-                    row.add(object.get("birthdate"));
                     row.add(object.get("telephones"));
                     row.add(object.get("email"));
+                    row.add(object.get("birthdate"));
                     row.add(object.get("cource"));
                     
                     dtm.addRow(row);
@@ -158,6 +178,21 @@ public class Operations extends Connection {
         }
         
         return dtm;
+    }
+    
+    public DefaultComboBoxModel getComboBoxModel(String comboName){
+        DefaultComboBoxModel comboBoxModel=new DefaultComboBoxModel();
+        switch(comboName){
+            case "CURSOS":
+                collection=getDatabase().getCollection("COURCES");
+                DBCursor cursor=collection.find();
+                while(cursor.hasNext()){
+                    DBObject object=cursor.next();
+                    comboBoxModel.addElement(object.get("name"));
+                }
+                break;
+        }
+        return comboBoxModel;
     }
     
 }
